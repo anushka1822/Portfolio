@@ -1,0 +1,507 @@
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Utility Classes for Animation */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease forwards;
+}
+
+/* Stagger delays */
+
+
+/* Initial states for items that will be animated by IntersectionObserver */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hamburger Animation */
+.hamburger span {
+    transform-origin: center;
+}
+
+/* You might want to handle hamburger animation logic in CSS or JS, here we assume JS classes but CSS transitions are already set in layout.css specific to hamburger span. 
+   Let's add a simple transform if we add class 'active' to spans or hamburger container. 
+   Actually, let's keep it simple for now or adding specific transforms here.
+*/
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: var(--max-opacity, 1);
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: var(--accent-color);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* Directional Reveals */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal-left.active,
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Typing Effect */
+/* Spacecraft Animation */
+/* Spacecraft Animation */
+/* Spacecraft Animation */
+.spacecraft-anim-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* CSS Spacecraft Model (Realism & Rotation) */
+.spacecraft-model {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 40px;
+    z-index: 100;
+    pointer-events: none;
+    /* Start off-screen left */
+    transform: translate(-100vw, -120px) rotate(-10deg);
+    animation: ufoFlyBy 7s ease-in-out forwards;
+    /* Speed up to 4s */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* New UFO Implementation */
+/* Using px/percentages instead of vmax for small scale */
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(50% 35% at 50% 75%, #0ff6, #0000),
+        #214;
+    box-shadow:
+        inset 0 -2px 4px -4px #0ff,
+        inset 0 3px 6px 0px #012c,
+        inset 0 2px 2px #000c;
+    z-index: 2;
+}
+
+.base {
+    position: absolute;
+    width: 35%;
+    aspect-ratio: 1;
+    left: 50%;
+    top: 48%;
+    /* Adjusted for centering */
+    background:
+        radial-gradient(130% 15% at 50% 74%, #0ff 20%, #0000 32%),
+        radial-gradient(130% 15% at 50% 74%, #0ff6 30%, #0000 32%),
+        radial-gradient(70% 40% at 50% 100%, #fff6 30%, #fff0),
+        linear-gradient(#214, #325),
+        #f004;
+    border-radius: 50%;
+    transform: translate(-50%, 0);
+    -webkit-mask:
+        radial-gradient(120% 35% at 50% 65%, #000 45%, #0000 0);
+    mask:
+        radial-gradient(120% 35% at 50% 65%, #000 45%, #0000 0);
+    z-index: 3;
+}
+
+.glass {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    left: 50%;
+    top: -20%;
+    /* Push up */
+    translate: -50% 0;
+    z-index: 1;
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 1;
+    background:
+        radial-gradient(circle at 68% 35%, #dddc 10%, #0000 0),
+        radial-gradient(at 55% 55%, #000 35%, #0000 0),
+        #aa9;
+    /* Fallback */
+    background-color: #cc8;
+    border-radius: 50%;
+    border: 2px solid #112820;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    box-shadow:
+        -6px 0 0 -4px #112820,
+        0 8px 0 -4px #021;
+}
+
+.glass::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% / 120% 120% 60% 60%;
+    background:
+        radial-gradient(at 70% 10%, #0ff2 5%, #0ff0 20%),
+        #0ff2;
+    box-shadow: inset 0 0 6px -2px #0ff;
+}
+
+.beam {
+    position: absolute;
+    width: 80%;
+    height: 0;
+    top: 80%;
+    /* Start below frame */
+    left: 50%;
+    transform: translate(-50%, 0);
+    background:
+        conic-gradient(from 173deg at 50% -40%, #0ff 14deg, #0000 0),
+        conic-gradient(from 170deg at 50% -40%, #0ff9 20deg, #0000 0);
+    -webkit-mask: linear-gradient(#000, #0000 80%);
+    mask: linear-gradient(#000, #0000 80%);
+    filter: blur(2px);
+    opacity: 0;
+    z-index: 0;
+
+    /* Re-attach animation */
+    animation: beamAction 7s ease-in-out forwards;
+}
+
+.revealed-text {
+    display: inline-block;
+    opacity: 0;
+    animation: textDrop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    /* Delay synchronized with UFO reaching center (approx 40% of 4s = 1.6s) */
+    animation-delay: 2.8s;
+    background-size: 200% auto;
+}
+
+@keyframes textDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes ufoFlyBy {
+    0% {
+        opacity: 0;
+        transform: translate(-60vw, -150px) rotate(-25deg) scale(0.8);
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+    }
+
+    10% {
+        opacity: 1;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+    }
+
+    30% {
+        /* Arrive & Decelerate */
+        transform: translate(-50%, -100px) rotate(10deg) scale(1.2);
+    }
+
+    40% {
+        /* Level out */
+        transform: translate(-50%, -100px) rotate(0deg) scale(1.2);
+    }
+
+    60% {
+        /* Hover stable */
+        transform: translate(-50%, -100px) rotate(0deg) scale(1.2);
+        opacity: 1;
+        /* Keep fully visible */
+    }
+
+    75% {
+        /* Prepare to zoom - Start visibility */
+        transform: translate(-50%, -100px) rotate(-5deg) scale(1.2);
+        opacity: 1;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+        /* No blur yet */
+    }
+
+    100% {
+        opacity: 0;
+        /* Accelerate hard "nose down" */
+        transform: translate(60vw, -120px) rotate(25deg) scale(0.8);
+        filter: blur(4px);
+        /* Blur out as it leaves speed */
+    }
+}
+
+@keyframes beamAction {
+
+    0%,
+    35% {
+        opacity: 0;
+        height: 0;
+    }
+
+    38% {
+        opacity: 1;
+        height: 100px;
+    }
+
+    62% {
+        opacity: 1;
+        height: 100px;
+    }
+
+    65% {
+        opacity: 0;
+        height: 0;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes blinkLights {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Staggered Animation Utilities */
+.stagger-1 {
+    transition-delay: 100ms;
+}
+
+.stagger-2 {
+    transition-delay: 200ms;
+}
+
+.stagger-3 {
+    transition-delay: 300ms;
+}
+
+.stagger-4 {
+    transition-delay: 400ms;
+}
+
+.stagger-5 {
+    transition-delay: 500ms;
+}
+
+@keyframes spinTexture {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+@keyframes spinLights {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Staggered Skills Entry */
+.skills-list i,
+.skills-list .custom-icon {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.active .skills-list i,
+.reveal.active .skills-list .custom-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-list i:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.skills-list i:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.skills-list i:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.skills-list i:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.skills-list i:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.skills-list i:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.skills-list i:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.skills-list i:nth-child(8) {
+    transition-delay: 0.8s;
+}

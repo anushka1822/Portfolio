@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Anushka Tyagi</title>
+    <meta name="description" content="A collection of my projects and work.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <style>
+        /* Specific styles for this page if needed, otherwise rely on layout.css */
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Stars -->
+    <div id="stars-container"></div>
+
+    <!-- Navigation -->
+    <header id="navbar">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="images/avataaars.svg" alt="Profile" class="nav-avatar">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects" class="active">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://drive.google.com/file/d/13Soutv1tFPQ5zBy3i1_wN8jdS4Yg39xc/view?usp=sharing"
+                        class="btn-primary" target="_blank">Resume</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container page-header">
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
+            <h1 class="section-title animate-slide-up">All <span class="text-gradient">Projects</span></h1>
+            <p class="animate-slide-up delay-200"
+                style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">
+                A comprehensive list of my work, featuring web applications, AI integrations, and experiments.
+            </p>
+        </div>
+
+        <section id="all-projects" class="container reveal">
+            <div class="projects-grid">
+                <!-- Existing Project 1: Jan-Sewa-Portal -->
+                <article class="project-card reveal delay-100">
+                    <div class="card-image">
+                        <img src="images/jan-sewa-portal.png" alt="Jan-Sewa-Portal Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Jan-Sewa-Portal</h3>
+                        <p>Voice Agent for Govt Schemes. Multilingual, agentic workflow with Groq, Gemini, ElevenLabs.
+                        </p>
+                        <a href="https://jan-sewa-portal.vercel.app/" class="btn-link">View Project &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Existing Project 2: TaskFlow -->
+                <article class="project-card reveal delay-200">
+                    <div class="card-image">
+                        <img src="images/taskflow.png" alt="TaskFlow Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>TaskFlow</h3>
+                        <p>Real-Time Task Manager. React, Socket.io, PostgreSQL. Real-time sync & RBAC.</p>
+                        <a href="https://task-manager-theta-taupe-79.vercel.app/" class="btn-link">View Project
+                            &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Existing Project 3: FitAI -->
+                <article class="project-card reveal delay-300">
+                    <div class="card-image">
+                        <img src="images/fitai.png" alt="FitAI Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>FitAI</h3>
+                        <p>AI Fitness Coach. Generates workout plans with Gemini AI & Pollinations.ai. Local storage.
+                        </p>
+                        <a href="https://fitness-coach-rho.vercel.app/" class="btn-link">View Project &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Playto Feed -->
+                <article class="project-card reveal delay-400">
+                    <div class="card-image">
+                        <img src="images/playto.png" alt="Playto Feed Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Playto Feed</h3>
+                        <p>A Cyberpunk-themed social feed featuring recursive comments, real-time interactions, and a
+                            time-windowed leaderboard.</p>
+                        <a href="https://playto-assignment-eight.vercel.app/" class="btn-link">View Project &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Bank Churn Prediction -->
+                <article class="project-card reveal delay-100">
+                    <div class="card-image">
+                        <img src="images/bank.png" alt="Bank Churn Prediction Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bank Churn Prediction</h3>
+                        <p>A machine learning solution to predict customer churn in banking. It identifies patterns in
+                            customer behavior, demographics, and product usage to proactively target at-risk individuals
+                            for retention.</p>
+                        <a href="https://github.com/anushka1822/Bank-churn-predition" class="btn-link">View Project
+                            &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Pulse-CMS -->
+                <article class="project-card reveal delay-100">
+                    <div class="card-image">
+                        <img src="images/Pulse.png" alt="Pulse-CMS Screenshot" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pulse-CMS</h3>
+                        <p>A modern Content Management System with a secure login system and an intuitive dashboard.
+                            Built for performance and scalability.</p>
+                        <div class="project-links">
+                            <a href="https://pulse-assignment-beta.vercel.app/login" class="btn-link">Live Demo
+                                &rarr;</a>
+                            <a href="https://github.com/anushka1822/Pulse-CMS" class="btn-link">GitHub Repo &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Contact / Footer Section -->
+        <section id="contact" class="container reveal">
+            <div class="footer-grid">
+                <!-- Column 1: Profile & Bio -->
+                <div class="footer-col profile-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🛡️</span>
+                        <h3>Anushka Tyagi</h3>
+                    </div>
+                    <p class="bio-text">
+                        A passionate learner exploring the world of technology, with a focus on web development.
+                        Committed to continuous growth and innovation.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/anushka1822" aria-label="GitHub"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-github">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></a>
+                        <a href="https://www.linkedin.com/in/tyagi-anushka" aria-label="LinkedIn"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-linkedin">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Learning Path -->
+                <div class="footer-col learning-col">
+                    <h3>My Learning Path</h3>
+                    <ul class="learning-list">
+                        <li>
+                            <span class="list-icon">🚀</span>
+                            <div>
+                                <strong>Emerging Technologies</strong>
+                                <p>Exploring and growing in tech</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">🎓</span>
+                            <div>
+                                <strong>Skill Development</strong>
+                                <p>Continuous learning mindset</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">💡</span>
+                            <div>
+                                <strong>Open to Opportunities</strong>
+                                <p>Eager to learn and contribute</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="footer-col links-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>🛡️ Learning and Growing in Tech</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" defer></script>
+</body>
+
+</html>
