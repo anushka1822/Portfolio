@@ -133,4 +133,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createStars();
+
+    // Project Modal Logic
+    const modal = document.getElementById('project-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalTechList = document.getElementById('modal-tech-list');
+    const modalGithub = document.getElementById('modal-github');
+    const modalDemo = document.getElementById('modal-demo');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+
+    if (modal) {
+        document.querySelectorAll('.view-project-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Extract data
+                const title = btn.getAttribute('data-title');
+                const img = btn.getAttribute('data-img');
+                const desc = btn.getAttribute('data-desc');
+                const techStr = btn.getAttribute('data-tech');
+                const github = btn.getAttribute('data-github');
+                const demo = btn.getAttribute('data-demo');
+                
+                // Populate Modal
+                modalTitle.textContent = title;
+                modalImg.src = img;
+                modalDesc.textContent = desc;
+                
+                // Populate Tech
+                modalTechList.innerHTML = '';
+                if (techStr) {
+                    const techs = techStr.split(',').map(t => t.trim());
+                    techs.forEach(tech => {
+                        const span = document.createElement('span');
+                        span.textContent = tech;
+                        modalTechList.appendChild(span);
+                    });
+                }
+                
+                // Handle Buttons
+                if (github && github.trim() !== '') {
+                    modalGithub.href = github;
+                } else {
+                    modalGithub.href = 'https://github.com/anushka1822';
+                }
+                modalGithub.style.display = 'inline-flex';
+                
+                if (demo) {
+                    modalDemo.href = demo;
+                    modalDemo.style.display = 'inline-flex';
+                } else {
+                    modalDemo.style.display = 'none';
+                }
+                
+                // Show modal
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                modal.classList.add('active');
+            });
+        });
+        
+        const closeProjectModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeProjectModal();
+            }
+        });
+        
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeProjectModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
+    }
 });
